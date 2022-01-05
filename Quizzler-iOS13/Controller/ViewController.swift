@@ -52,9 +52,11 @@ class ViewController: UIViewController {
         progressBar.progress = quizBrain.getProgress()
         scoreLabel.text = "Score: \(quizBrain.getScore())"
         
-        firstChoice.setTitle(quizBrain.quiz[quizBrain.questionNumber].answer[0], for: .normal)
-        secondChoice.setTitle(quizBrain.quiz[quizBrain.questionNumber].answer[1], for: .normal)
-        thirdChoice.setTitle(quizBrain.quiz[quizBrain.questionNumber].answer[2], for: .normal)
+        let answerChoice = quizBrain.getAnswers()
+        
+        firstChoice.setTitle(answerChoice[0], for: .normal)
+        secondChoice.setTitle(answerChoice[1], for: .normal)
+        thirdChoice.setTitle(answerChoice[2], for: .normal)
         
         firstChoice.backgroundColor = UIColor.clear
         secondChoice.backgroundColor = UIColor.clear
